@@ -1,0 +1,9 @@
+input[type="submit"]:disabled {
+  background: #dddddd;
+}
+div.prev_div ~ div.next_div {
+  margin: 10px;
+}
+.additional {
+  color: red;
+}
