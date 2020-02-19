@@ -24,6 +24,7 @@ const Authentication = props => {
 
   const [{ response, isLoading, errors }, doFetch] = useFetch(apiUrl);
   const [token, setToken] = useLocalStorage("token");
+  console.log("errors", errors);
   console.log("currentUserState", currentUserState);
   const handleSubmit = e => {
     e.preventDefault();
@@ -49,7 +50,7 @@ const Authentication = props => {
       isLoading: false,
       currentUser: response.user
     }));
-  }, [response, setToken]);
+  }, [response, setToken, token, setCurrentUserState]);
 
   if (isSuccessfulSubmit) {
     return <Redirect to="/" />;
