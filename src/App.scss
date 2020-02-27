@@ -7,3 +7,16 @@ div.prev_div ~ div.next_div {
 .additional {
   color: red;
 }
+.paggination {
+  display: flex;
+}
+.active-link {
+  color: red;
+  background: red;
+}
+.paggination {
+  list-style-type: none;
+}
+.page-link {
+  padding: 10px;
+}

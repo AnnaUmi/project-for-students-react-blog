@@ -9,11 +9,11 @@ import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 import FeedToggler from "../../components/FeedToggler";
 
-const GlobalFeed = ({ location, match }) => {
+const YourFeed = ({ location, match }) => {
   const { currentPage, offset } = getPaginator(location.search);
   console.log("currentPage, offset", currentPage, offset);
   const stringifyParam = stringify({ limit, offset });
-  const apiUrl = `https://conduit.productionready.io/api/articles?${stringifyParam}`;
+  const apiUrl = `https://conduit.productionready.io/api/articles/feed/?${stringifyParam}`;
   const [{ response, isLoading, error }, doFetch] = useFetch(apiUrl);
   const url = match.url;
   useEffect(() => {
@@ -47,4 +47,4 @@ const GlobalFeed = ({ location, match }) => {
     </div>
   );
 };
-export default GlobalFeed;
+export default YourFeed;
